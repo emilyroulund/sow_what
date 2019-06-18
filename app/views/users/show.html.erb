@@ -1,0 +1,6 @@
+<h1>Hello, <%= @user.name %>!</h1>
+<% if logged_in? %>
+<%= button_to "Logout", "/sessions/destroy", method: :delete%>
+<%else %>
+<%= button_to "Login", "/sessions/new", method: :get %>
+<%end%>
