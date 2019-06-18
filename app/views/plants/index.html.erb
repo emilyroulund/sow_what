@@ -1,5 +1,8 @@
-<h1>Plants</h1>
-<% @sorted_plants.each do |plant| %>
-<%= plant.img_url %><br>
+<h1>List of Plants</h1>
+<% @plants.each do |plant| %>
+<%= image_tag plant.img_url, alt: plant.name, size:'200' %><br>
 <%= link_to "#{plant.name}", plant_path(plant)%><hr>
 <%end%>
+
+<%= link_to "User", user_path(@user) %>
+<%= link_to "Create Plant", new_user_plant_path(:user_id) %>
