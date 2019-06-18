@@ -764,6 +764,135 @@ FOREIGN KEY ("user_id")
   ↳ /Users/jooyonwon/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/jooyonwon/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+<<<<<<< HEAD
+Started GET "/users/new" for ::1 at 2019-06-18 15:31:34 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexhare/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 253ms (Views: 215.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-18 15:32:17 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/sessions/new" for ::1 at 2019-06-18 15:32:52 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for ::1 at 2019-06-18 15:32:56 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bmd8Jx1w6OjRZBCYa77oKi5y6Hys/8vHIMxyeEIx+H7qHsPVPoNwbLmuouNTDYDzyBaSJNSw5dM3wsTB6HuZMA==", "username"=>"sam", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sam"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2019-06-18 15:32:56 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.6ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:21
+  Rendered users/show.html.erb within layouts/application (38.2ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Could not find the source association(s) :plant_id in model Favorite. Try 'has_many :favorite_plants, :through => :favorites, :source => <name>'. Is it one of user or plant?):
+    25: 
+    26: <h3>My Favorite Plants</h3>
+    27:     <ul>
+    28:     <% @user.favorite_plants.each do |faveplant| %>
+    29:         <li><%= image_tag faveplant.img_url, alt: faveplant.name, size:'200' %> <%= link_to(faveplant.name, plant_path(faveplant))%></li>
+    30:     <% end %>
+    31:     </ul>
+  
+app/views/users/show.html.erb:28:in `_app_views_users_show_html_erb___1916825090521743726_70275122918340'
+Started GET "/users/1" for ::1 at 2019-06-18 15:34:09 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:21
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" INNER JOIN "favorites" ON "plants"."id" = "favorites"."plant_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 44ms (Views: 28.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/2" for ::1 at 2019-06-18 15:34:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:21
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" INNER JOIN "favorites" ON "plants"."id" = "favorites"."plant_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2019-06-18 15:39:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:21
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants" INNER JOIN "favorites" ON "plants"."id" = "favorites"."plant_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2019-06-18 15:39:29 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8SCuhPMkvVSa++BdThdVcYPlSDArHH8olpguORslQQl1WRF20Ncl0PIxUiZ2pD2oZYEyaFNTUTyBlpiAsW8gRw==", "id"=>"destroy"}
+Redirected to http://localhost:3000/users/new
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-18 15:39:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-06-18 15:42:40 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+=======
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dave_is_Dave"], ["LIMIT", 1]]
   [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dave"], ["username", "Dave_is_Dave"], ["password_digest", "$2a$10$npojWXAemEbiqqVrU6PD0OYlm6hm.VjgDzYbF7newGRXX4H5QMjz6"], ["created_at", "2019-06-18 20:15:17.964675"], ["updated_at", "2019-06-18 20:15:17.964675"]]
@@ -1173,6 +1302,49 @@ FOREIGN KEY ("user_id")
   ↳ db/seeds.rb:24
   [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+<<<<<<< HEAD
+>>>>>>> b45555cd2e9705a5f3c1f98559e8790aa5f265e7
+Started GET "/users/new" for ::1 at 2019-06-18 16:11:47 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexhare/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 279ms (Views: 214.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for ::1 at 2019-06-18 16:12:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vz3onnDSkgspvcS7GhwTrDTlIYGuhFpI+0z/RtLxuZjTRFdsUyEKj0F3dsAir3t10oFb2dbLdFzsQkn/eLvY1g==", "user"=>{"name"=>"Sam", "username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sam"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Create (7.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sam"], ["username", "sam"], ["password_digest", "$2a$10$gCvfb/JUWucTcMrcsmD8retbgbFvGjPADjPHjiqCJOjJ09Gl0eySK"], ["created_at", "2019-06-18 21:12:07.190519"], ["updated_at", "2019-06-18 21:12:07.190519"]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+Redirected to http://localhost:3000/users/18
+Completed 302 Found in 76ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/users/18" for ::1 at 2019-06-18 16:12:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/views/users/show.html.erb:21
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" INNER JOIN "favorites" ON "plants"."id" = "favorites"."plant_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 2.3ms)
+
+
+=======
 Started GET "/heroines" for ::1 at 2019-06-18 16:19:35 -0500
   [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/emilyroulund/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -1216,3 +1388,4 @@ ArgumentError (wrong number of arguments (given 1, expected 0)):
 
 app/controllers/plants_controller.rb:5:in `sort_by'
 app/controllers/plants_controller.rb:5:in `index'
+>>>>>>> 95ec18bce173b21bb573b94a1e3240fab00be09e

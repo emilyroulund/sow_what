@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :plants
   has_many :comments
   has_many :favorites
-  has_many :favorite_plants, through: :favorites, source: :plant_id
+  has_many :favorite_plants, through: :favorites, source: :plant
 
   validates :name, :username, presence: true
   validates :username, uniqueness: true
