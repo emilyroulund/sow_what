@@ -80,14 +80,14 @@ Completed 200 OK in 36ms (Views: 15.2ms | ActiveRecord: 0.9ms)
 
 
 Started GET "/sessions/new" for ::1 at 2019-06-18 10:51:59 -0500
-  
+
 SyntaxError (/Users/alexhare/dev/Group Projects/sow_what/app/controllers/sessions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
 ...rs = [“Invalid credentials”]
 ...                 ^~~~~~~~~~~~~~):
-  
+
 app/controllers/sessions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
 Started GET "/sessions/new" for ::1 at 2019-06-18 10:52:53 -0500
-  
+
 SyntaxError (/Users/alexhare/dev/Group Projects/sow_what/app/controllers/sessions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
 ...s = ([“Invalid credentials”])
 ...                 ^~~~~~~~~~~~~~
@@ -95,7 +95,7 @@ SyntaxError (/Users/alexhare/dev/Group Projects/sow_what/app/controllers/session
 		end
 		^~~
 /Users/alexhare/dev/Group Projects/sow_what/app/controllers/sessions_controller.rb:18: syntax error, unexpected end, expecting ')'):
-  
+
 app/controllers/sessions_controller.rb:11: syntax error, unexpected tIDENTIFIER, expecting do or '{' or '('
 app/controllers/sessions_controller.rb:13: syntax error, unexpected end, expecting ')'
 app/controllers/sessions_controller.rb:18: syntax error, unexpected end, expecting ')'
@@ -106,14 +106,14 @@ Processing by SessionsController#new as HTML
 Completed 500 Internal Server Error in 195ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `“Login”' for #<#<Class:0x00007fc8682fc190>:0x00007fc868306640>):
      8: 		<p><%= text_field_tag :username %></p>
      9: 		<p><%= label_tag :password %></p>
     10: 		<p><%= password_field_tag :password %></p>
     11: 		<p><% submit_tag “Login”%></p>
     12: 	<% end %>
-  
+
 app/views/sessions/new.html.erb:11:in `block in _app_views_sessions_new_html_erb__1633873667557503307_70249359074520'
 app/views/sessions/new.html.erb:6:in `_app_views_sessions_new_html_erb__1633873667557503307_70249359074520'
 Started GET "/sessions/new" for ::1 at 2019-06-18 10:53:56 -0500
@@ -163,10 +163,10 @@ Processing by SessionsController#create as HTML
 Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.7ms)
 
 
-  
+
 NoMethodError (undefined method `to' for #<SessionsController:0x00007fc86ac2d870>
 Did you mean?  t):
-  
+
 app/controllers/sessions_controller.rb:9:in `create'
 Started POST "/sessions" for ::1 at 2019-06-18 10:57:15 -0500
 Processing by SessionsController#create as HTML
@@ -254,9 +254,9 @@ Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/users" for ::1 at 2019-06-18 11:07:41 -0500
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
-  
+
 actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
 actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
 actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
@@ -343,9 +343,9 @@ Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.3ms)
 
 
 Started GET "/users" for ::1 at 2019-06-18 11:08:01 -0500
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
-  
+
 actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
 actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
 actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
@@ -397,9 +397,9 @@ puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/user/new" for ::1 at 2019-06-18 11:08:08 -0500
-  
+
 ActionController::RoutingError (No route matches [GET] "/user/new"):
-  
+
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -610,16 +610,16 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (First argument in form cannot contain nil or be empty):
     4:     <%end%>
     5: <%end%>
-    6: 
+    6:
     7: <%= form_for @user do |f| %>
     8:     <p><%= f.label :name %></p>
     9:     <p><%= f.text_field :name %></p>
    10:     <p><%= f.label :username %></p>
-  
+
 app/views/users/new.html.erb:7:in `_app_views_users_new_html_erb__2155608228316420012_70249381575620'
 app/controllers/users_controller.rb:28:in `authorized'
 Started GET "/users/3" for ::1 at 2019-06-18 11:25:51 -0500
@@ -1302,6 +1302,7 @@ Completed 200 OK in 33ms (Views: 20.5ms | ActiveRecord: 0.7ms)
   ↳ db/seeds.rb:24
   [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+<<<<<<< HEAD
 >>>>>>> b45555cd2e9705a5f3c1f98559e8790aa5f265e7
 Started GET "/users/new" for ::1 at 2019-06-18 16:11:47 -0500
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -1343,3 +1344,48 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 2.3ms)
 
 
+=======
+Started GET "/heroines" for ::1 at 2019-06-18 16:19:35 -0500
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/emilyroulund/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+
+ActionController::RoutingError (No route matches [GET] "/heroines"):
+
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/plants" for ::1 at 2019-06-18 16:19:40 -0500
+Processing by PlantsController#index as HTML
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.0ms)
+
+
+
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+
+app/controllers/plants_controller.rb:5:in `sort_by'
+app/controllers/plants_controller.rb:5:in `index'
+>>>>>>> 95ec18bce173b21bb573b94a1e3240fab00be09e
