@@ -2,15 +2,22 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
-    @sorted_plants = @plants.sort_by(:name)
-    @user = User.find(params[:id])
     @users = User.all
+    @user = @plants.each do |plant|
+      plant.user.name
+    end
   end
 
   def show
     @plant = Plant.find(params[:id])
-    @user = User.find(params[:id])
     @users = User.all
+    @current_user = User.find_by(id: session[:user_id])
+    @hidden_plant = Plant.find_by(id: params[:id])
+    @comment = Comment.new
+  end
+
+  def new
+    @plant = Plant.new
   end
 
   def create
@@ -28,7 +35,7 @@ class PlantsController < ApplicationController
 
   def update
     @plant.assign_attributes(plant_params)
-    if @model.save
+    if @plant.save
       redirect_to plant_path(@plant)
     else
       @errors = @plant.errors.full_messages

@@ -1,4 +1,7 @@
 <h2>Personal Profile for: <%= @user.username %> </h2>
+<% if @current_user %>
+    <em>Logged in as: <%=@current_user.username%></em>
+<% end %>
 <hr>
 <h3>Hello, <%= @user.name %>!</h3>
 
@@ -11,10 +14,7 @@
     <% end %>
     </ul>
 
-#user.plants (plants created)
-#user.favorite_plants
-#user.comments
-#buttons : create a plant, go to the plant index
+<% TO DO :#user.comments #buttons : create a plant, go to the plant index %>
 
 <h3>Plants I've Created</h3>
     <ul>
