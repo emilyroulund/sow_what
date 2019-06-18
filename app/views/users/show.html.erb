@@ -1,4 +1,35 @@
-<h1>Hello, <%= @user.name %>!</h1>
+<h2>Personal Profile for: <%= @user.username %> </h2>
+<hr>
+<h3>Hello, <%= @user.name %>!</h3>
+
+<h4>Profile Details:</h4>
+    <ul>
+    <li>Name: <%= @user.name%></li>
+    <li>Username: <%= @user.username%></li>
+    <% if @user.location %>
+        <li>Location: <%= @user.location%></li>
+    <% end %>
+    </ul>
+
+#user.plants (plants created)
+#user.favorite_plants
+#user.comments
+#buttons : create a plant, go to the plant index
+
+<h3>Plants I've Created</h3>
+    <ul>
+    <% @user.plants.each do |plant| %>
+        <li><%= image_tag plant.img_url, alt: plant.name, size:'200' %> <%= link_to(plant.name, plant_path(plant))%></li>
+    <% end %>
+    </ul>
+
+<h3>My Favorite Plants</h3>
+    <ul>
+    <% @user.favorite_plants.each do |faveplant| %>
+        <li><%= image_tag faveplant.img_url, alt: faveplant.name, size:'200' %> <%= link_to(faveplant.name, plant_path(faveplant))%></li>
+    <% end %>
+    </ul>
+
 <% if logged_in? %>
 <%= button_to "Logout", "/sessions/destroy", method: :delete%>
 <%else %>
