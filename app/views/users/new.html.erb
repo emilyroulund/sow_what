@@ -1,7 +1,9 @@
 <% if @errors %>
+    <ul>
     <%@errors.each do |error|%>
-    <%=error%>
+        <li><%=error%></li>
     <%end%>
+    </ul>
 <%end%>
 
 <%= form_for @user do |f| %>
@@ -15,4 +17,3 @@
     <p><%= f.password_field :password_confirmation %></p>
     <p><%= f.submit "Create User"%>
 <% end %>
-<h1>hey</h1>
