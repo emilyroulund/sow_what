@@ -1,0 +1,5 @@
+<h1>Plants</h1>
+<% @sorted_plants.each do |plant| %>
+<%= plant.img_url %><br>
+<%= link_to "#{plant.name}", plant_path(plant)%><hr>
+<%end%>

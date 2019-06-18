@@ -2,6 +2,7 @@ class PlantsController < ApplicationController
 
   def index
     @plants = Plant.all
+    @sorted_plants = @plants.sort_by(:name)
     @user = User.find(params[:id])
     @users = User.all
   end
