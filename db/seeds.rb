@@ -1,4 +1,7 @@
+CommentUpvote.destroy_all
 Comment.destroy_all
+Favorite.destroy_all
+PlantLike.destroy_all
 Plant.destroy_all
 User.destroy_all
 users = [
@@ -37,4 +40,12 @@ comments.each {|comment| Comment.create(comment) }
 
 (1..5).to_a.sample.times do
   PlantLike.create(user: User.all.sample, plant: Plant.all.sample)
+end
+
+(1..5).to_a.sample.times do
+  Favorite.create(user: User.all.sample, plant: Plant.all.sample)
+end
+
+(1..5).to_a.sample.times do
+  CommentUpvote.create(user: User.all.sample, comment: Comment.all.sample)
 end
