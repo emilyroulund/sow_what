@@ -1,6 +1,6 @@
+Comment.destroy_all
 Plant.destroy_all
 User.destroy_all
-
 users = [
   {name: "Micheal Alfred", username: "Micheal_Is_King", password: "password1234" },
   {name: "Dave Alfred", username: "Dave_Is_King", password: "password1234" },
@@ -22,3 +22,19 @@ plants = [
 plants = plants.map { |plant| plant.merge( { user_id: User.all.sample.id } ) }
 
 plants.each {|plant| Plant.create(plant) }
+
+comments = [
+  {title: "This is a dope plant", content: "This plant is super dope yo like the dopest of plants my dudeeee its like the best my dude like always the the best"},
+  {title: "This is a trash plant", content: "This plant is super trash yo like the trashst of plants my dudeeee its like the worst my dude like always the the worst"},
+  {title: "This is a average plant", content: "This plant is super average yo like the averagest of plants my dudeeee its like neutral my dude like always the the neutral"},
+  {title: "This is a amazing plant", content: "This plant is super amazing yo like the amazingst of plants my dudeeee its like amazing my dude like always the the amazing"},
+  {title: "This is a crazy plant", content: "This plant is super crazy yo like the craziest of plants my dudeeee its like crazy my dude like always the the crazy"},
+]
+
+comments = comments.map { |comment| comment.merge( { user_id: User.all.sample.id, plant_id: Plant.all.sample.id} ) }
+
+comments.each {|comment| Comment.create(comment) }
+
+(1..5).to_a.sample.times do
+  PlantLike.create(user: User.all.sample, plant: Plant.all.sample)
+end
