@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: MyString
+  sunlight: MyString
+  water: MyString
+  soil: MyString
+  humidity: MyString
+  temperature: MyString
+  climate: MyString
+  pot_size: MyString
+  description: MyString
+  img_url: MyString
+
+two:
+  user: two
+  name: MyString
+  sunlight: MyString
+  water: MyString
+  soil: MyString
+  humidity: MyString
+  temperature: MyString
+  climate: MyString
+  pot_size: MyString
+  description: MyString
+  img_url: MyString
