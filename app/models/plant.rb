@@ -1,9 +1,9 @@
 class Plant < ApplicationRecord
-  belongs_to :creator, foreign_key: :user_id
+  belongs_to :user
   has_many :comments
   has_many :plant_likes
   has_many :favorites
-  has_many :users, through: :favorites
+  has_many :favorite_users, through: :favorites, source: :user
 
   validates :name, presence: true
   validates :img_url, presence: true

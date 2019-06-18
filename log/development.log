@@ -764,6 +764,7 @@ FOREIGN KEY ("user_id")
   ↳ /Users/jooyonwon/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/jooyonwon/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+<<<<<<< HEAD
 Started GET "/users/new" for ::1 at 2019-06-18 15:31:34 -0500
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/alexhare/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -889,5 +890,456 @@ Processing by UsersController#new as HTML
   Rendering users/new.html.erb within layouts/application
   Rendered users/new.html.erb within layouts/application (2.7ms)
 Completed 200 OK in 33ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+=======
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dave_is_Dave"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dave"], ["username", "Dave_is_Dave"], ["password_digest", "$2a$10$npojWXAemEbiqqVrU6PD0OYlm6hm.VjgDzYbF7newGRXX4H5QMjz6"], ["created_at", "2019-06-18 20:15:17.964675"], ["updated_at", "2019-06-18 20:15:17.964675"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."user_id" = ? LIMIT ?[0m  [["user_id", 4], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/derektownsend/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Load (0.1ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Micheal_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Micheal Alfred"], ["username", "Micheal_Is_King"], ["password_digest", "$2a$10$3DgQAD4IzD3BT2agNKXuxOak7RwvbXPmIlkGuvT/CQtzdLrTW0YeS"], ["created_at", "2019-06-18 20:42:04.404836"], ["updated_at", "2019-06-18 20:42:04.404836"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dave_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dave Alfred"], ["username", "Dave_Is_King"], ["password_digest", "$2a$10$JLYzoB3DkLdl9uQemAny1.q0CJ0HVRIeS/YZYU9NIbMQje.Ex2XXW"], ["created_at", "2019-06-18 20:42:04.475679"], ["updated_at", "2019-06-18 20:42:04.475679"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jane_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jane Alfred"], ["username", "Jane_Is_Queen"], ["password_digest", "$2a$10$I1xg80BP8mdfMQLIdwMA9.kZ8NSD3zeQjYN9/RYHoS3k66N/EMOz2"], ["created_at", "2019-06-18 20:42:04.536790"], ["updated_at", "2019-06-18 20:42:04.536790"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "John_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "John Alfred"], ["username", "John_Is_King"], ["password_digest", "$2a$10$fAEByb35.K41ZtWa.qCpfOZWuvCoPKyzZ9bVJ6PIu23tduqvI7J1O"], ["created_at", "2019-06-18 20:42:04.601174"], ["updated_at", "2019-06-18 20:42:04.601174"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jenny_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jenny Alfred"], ["username", "Jenny_Is_Queen"], ["password_digest", "$2a$10$hYh6mO.fwORt1OnVOvuk5O2b8jLAVzMG3BHO1APXCIHL3BBiYa2QC"], ["created_at", "2019-06-18 20:42:04.730575"], ["updated_at", "2019-06-18 20:42:04.730575"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" WHERE "plants"."user_id" = ? LIMIT ?[0m  [["user_id", 8], ["LIMIT", 11]]
+  [1m[36mPlant Load (0.3ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT  "favorites".* FROM "favorites" WHERE "favorites"."user_id" = ? LIMIT ?[0m  [["user_id", 8], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPlantLike Load (0.1ms)[0m  [1m[34mSELECT  "plant_likes".* FROM "plant_likes" WHERE "plant_likes"."user_id" = ? LIMIT ?[0m  [["user_id", 8], ["LIMIT", 11]]
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlant Create (2.1ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 8], ["name", "the abyss"], ["sunlight", "none"], ["water", "none"], ["soil", "none"], ["humidity", "0"], ["temperature", "100000 Kelvin"], ["climate", "none"], ["pot_size", "none"], ["description", "IT CONSUMES US ALL THE END IS HERE PLEASE RUN ITS COMING FOR US ALL DEAR GOD NO I DIDNT THINK IT WAS REAL PLEASE NO NOOOOO NOT LIKE THIS WHY MEEE WHY WHY OH GOD WHYYYYYY"], ["img_url", "https://wallpapercave.com/wp/wp2450319.jpg"], ["created_at", "2019-06-18 20:58:07.898444"], ["updated_at", "2019-06-18 20:58:07.898444"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."plant_id" = ? LIMIT ?[0m  [["plant_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/derektownsend/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/derektownsend/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Micheal_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Micheal Alfred"], ["username", "Micheal_Is_King"], ["password_digest", "$2a$10$zdovoqPX1bAVgLcG8uusyeRTqM4YMajcjcMDqm87.xTXPR9vYvjw."], ["created_at", "2019-06-18 20:59:42.192932"], ["updated_at", "2019-06-18 20:59:42.192932"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dave_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dave Alfred"], ["username", "Dave_Is_King"], ["password_digest", "$2a$10$gN87WvnAwWW/oUJwDezLIuT0fzv91J9lqdVSLtc6uQ0rj9XN.yO.K"], ["created_at", "2019-06-18 20:59:42.253549"], ["updated_at", "2019-06-18 20:59:42.253549"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jane_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jane Alfred"], ["username", "Jane_Is_Queen"], ["password_digest", "$2a$10$hwLw9761qRiky.PH3nr7NO4WWcB9VAa/X6LNgNdbDGiAn5he37Ez6"], ["created_at", "2019-06-18 20:59:42.313175"], ["updated_at", "2019-06-18 20:59:42.313175"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "John_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jenny_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 11], ["name", "cactus"], ["sunlight", "lots"], ["water", "very little"], ["soil", "arid"], ["humidity", "90"], ["temperature", "400"], ["climate", "cold"], ["pot_size", "large"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 CACTI IS MY HOME"], ["img_url", "https://cdn.pixabay.com/photo/2016/06/13/07/32/cactus-1453793__340.jpg"], ["created_at", "2019-06-18 20:59:42.445015"], ["updated_at", "2019-06-18 20:59:42.445015"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 11], ["name", "ficus"], ["sunlight", "none"], ["water", "always"], ["soil", "rich"], ["humidity", "10"], ["temperature", "1"], ["climate", "tropical"], ["pot_size", "tiny"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 FICUS IS MY HOME"], ["img_url", "https://images-na.ssl-images-amazon.com/images/I/81Ez5uPN9vL._SY679_.jpg"], ["created_at", "2019-06-18 20:59:42.449361"], ["updated_at", "2019-06-18 20:59:42.449361"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 12], ["name", "human"], ["sunlight", "none"], ["water", "2 liters daily"], ["soil", "poor"], ["humidity", "10"], ["temperature", "98"], ["climate", "cold"], ["pot_size", "largest"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 HUMAN IS MY HOME"], ["img_url", "https://static.designboom.com/wp-content/dbsub/415914/2018-01-12/img_5_1515746637_5caa444b82045a287c33b88ae22a24a4.jpg"], ["created_at", "2019-06-18 20:59:42.487293"], ["updated_at", "2019-06-18 20:59:42.487293"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.8ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 10], ["name", "dogwood"], ["sunlight", "none"], ["water", "daily"], ["soil", "rich"], ["humidity", "43"], ["temperature", "40K"], ["climate", "Tundra"], ["pot_size", "Small"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 DOGWOOD IS MY HOME"], ["img_url", "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Cloud-9-dogwood-450w_grande.jpg?v=1549687022"], ["created_at", "2019-06-18 20:59:42.493635"], ["updated_at", "2019-06-18 20:59:42.493635"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 12], ["name", "the abyss"], ["sunlight", "none"], ["water", "none"], ["soil", "none"], ["humidity", "0"], ["temperature", "100000 Kelvin"], ["climate", "none"], ["pot_size", "none"], ["description", "IT CONSUMES US ALL THE END IS HERE PLEASE RUN ITS COMING FOR US ALL DEAR GOD NO I DIDNT THINK IT WAS REAL PLEASE NO NOOOOO NOT LIKE THIS WHY MEEE WHY WHY OH GOD WHYYYYYY"], ["img_url", "https://wallpapercave.com/wp/wp2450319.jpg"], ["created_at", "2019-06-18 20:59:42.499145"], ["updated_at", "2019-06-18 20:59:42.499145"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Load (0.4ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/derektownsend/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mPlant Load (0.2ms)[0m  [1m[34mSELECT "plants".* FROM "plants"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.5ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 1]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 2]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 3]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 4]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.3ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 5]]
+  ↳ db/seeds.rb:1
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mPlant Destroy (0.8ms)[0m  [1m[31mDELETE FROM "plants" WHERE "plants"."id" = ?[0m  [["id", 6]]
+  ↳ db/seeds.rb:1
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  ↳ db/seeds.rb:2
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  ↳ db/seeds.rb:2
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Micheal_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Micheal Alfred"], ["username", "Micheal_Is_King"], ["password_digest", "$2a$10$BXuw3I7UWyDQH5eat6KUd.uCoga/uvYYE8NqdVek.8WrkJILtDBbe"], ["created_at", "2019-06-18 21:00:26.319656"], ["updated_at", "2019-06-18 21:00:26.319656"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Dave_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dave Alfred"], ["username", "Dave_Is_King"], ["password_digest", "$2a$10$nCAdvNybb7rk5RXIi0u9x.0YkmpO5Evc/L8CwbU/unrXtdSoiawWm"], ["created_at", "2019-06-18 21:00:26.387280"], ["updated_at", "2019-06-18 21:00:26.387280"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jane_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jane Alfred"], ["username", "Jane_Is_Queen"], ["password_digest", "$2a$10$uRyHhlf9hLWxSxx5Mgk0S.ZpcEjl0OlR2OHz2b4qL1/IYG4piZeke"], ["created_at", "2019-06-18 21:00:26.451826"], ["updated_at", "2019-06-18 21:00:26.451826"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "John_Is_King"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "John Alfred"], ["username", "John_Is_King"], ["password_digest", "$2a$10$u4A5VbXIOrtrLkm3VWwrpOuMShaWq4bR4G.xSDyhS.mDuhpmUE5RK"], ["created_at", "2019-06-18 21:00:26.524577"], ["updated_at", "2019-06-18 21:00:26.524577"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Jenny_Is_Queen"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jenny Alfred"], ["username", "Jenny_Is_Queen"], ["password_digest", "$2a$10$o0NchBuZbwcIXfAaKLlxSuNGvOlyfhg7JWR4Z00zOZpBEDKjdSOBa"], ["created_at", "2019-06-18 21:00:26.590280"], ["updated_at", "2019-06-18 21:00:26.590280"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.4ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 16], ["name", "cactus"], ["sunlight", "lots"], ["water", "very little"], ["soil", "arid"], ["humidity", "90"], ["temperature", "400"], ["climate", "cold"], ["pot_size", "large"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 CACTI IS MY HOME"], ["img_url", "https://cdn.pixabay.com/photo/2016/06/13/07/32/cactus-1453793__340.jpg"], ["created_at", "2019-06-18 21:00:26.609769"], ["updated_at", "2019-06-18 21:00:26.609769"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 14], ["name", "ficus"], ["sunlight", "none"], ["water", "always"], ["soil", "rich"], ["humidity", "10"], ["temperature", "1"], ["climate", "tropical"], ["pot_size", "tiny"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 FICUS IS MY HOME"], ["img_url", "https://images-na.ssl-images-amazon.com/images/I/81Ez5uPN9vL._SY679_.jpg"], ["created_at", "2019-06-18 21:00:26.615920"], ["updated_at", "2019-06-18 21:00:26.615920"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.5ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 14], ["name", "human"], ["sunlight", "none"], ["water", "2 liters daily"], ["soil", "poor"], ["humidity", "10"], ["temperature", "98"], ["climate", "cold"], ["pot_size", "largest"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 HUMAN IS MY HOME"], ["img_url", "https://static.designboom.com/wp-content/dbsub/415914/2018-01-12/img_5_1515746637_5caa444b82045a287c33b88ae22a24a4.jpg"], ["created_at", "2019-06-18 21:00:26.622103"], ["updated_at", "2019-06-18 21:00:26.622103"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 17], ["name", "dogwood"], ["sunlight", "none"], ["water", "daily"], ["soil", "rich"], ["humidity", "43"], ["temperature", "40K"], ["climate", "Tundra"], ["pot_size", "Small"], ["description", "WOW HERE WE ARE AGAIN WITH THE HOTEST SUMMER MIX TAPE OF 2010 DOGWOOD IS MY HOME"], ["img_url", "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Cloud-9-dogwood-450w_grande.jpg?v=1549687022"], ["created_at", "2019-06-18 21:00:26.628215"], ["updated_at", "2019-06-18 21:00:26.628215"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Create (0.3ms)[0m  [1m[32mINSERT INTO "plants" ("user_id", "name", "sunlight", "water", "soil", "humidity", "temperature", "climate", "pot_size", "description", "img_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 13], ["name", "the abyss"], ["sunlight", "none"], ["water", "none"], ["soil", "none"], ["humidity", "0"], ["temperature", "100000 Kelvin"], ["climate", "none"], ["pot_size", "none"], ["description", "IT CONSUMES US ALL THE END IS HERE PLEASE RUN ITS COMING FOR US ALL DEAR GOD NO I DIDNT THINK IT WAS REAL PLEASE NO NOOOOO NOT LIKE THIS WHY MEEE WHY WHY OH GOD WHYYYYYY"], ["img_url", "https://wallpapercave.com/wp/wp2450319.jpg"], ["created_at", "2019-06-18 21:00:26.631238"], ["updated_at", "2019-06-18 21:00:26.631238"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT  "plants".* FROM "plants" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+>>>>>>> b45555cd2e9705a5f3c1f98559e8790aa5f265e7
+Started GET "/users/new" for ::1 at 2019-06-18 16:11:47 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alexhare/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 279ms (Views: 214.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users" for ::1 at 2019-06-18 16:12:07 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vz3onnDSkgspvcS7GhwTrDTlIYGuhFpI+0z/RtLxuZjTRFdsUyEKj0F3dsAir3t10oFb2dbLdFzsQkn/eLvY1g==", "user"=>{"name"=>"Sam", "username"=>"sam", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sam"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[36mUser Create (7.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sam"], ["username", "sam"], ["password_digest", "$2a$10$gCvfb/JUWucTcMrcsmD8retbgbFvGjPADjPHjiqCJOjJ09Gl0eySK"], ["created_at", "2019-06-18 21:12:07.190519"], ["updated_at", "2019-06-18 21:12:07.190519"]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:14
+Redirected to http://localhost:3000/users/18
+Completed 302 Found in 76ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/users/18" for ::1 at 2019-06-18 16:12:07 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPlant Load (0.5ms)[0m  [1m[34mSELECT "plants".* FROM "plants" WHERE "plants"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/views/users/show.html.erb:21
+  [1m[36mPlant Load (0.7ms)[0m  [1m[34mSELECT "plants".* FROM "plants" INNER JOIN "favorites" ON "plants"."id" = "favorites"."plant_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 18]]
+  ↳ app/views/users/show.html.erb:28
+  Rendered users/show.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 2.3ms)
 
 
