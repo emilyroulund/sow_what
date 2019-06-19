@@ -8,3 +8,18 @@
 <h3>Climate: <%= @plant.climate %></h3>
 <h3>Pot Size: <%= @plant.pot_size %></h3>
 <h3>Description: <%= @plant.description %></h3>
+
+<hr>
+<h2>Comments</h2>
+<%= form_for(@comment) do |f| %>
+<%= f.hidden_field :plant_id, :value => @hidden_plant.id %>
+<%= f.hidden_field :user_id, :value => @current_user.id %>
+
+<%= f.label :title %>:
+<%= f.text_field :title %><br>
+
+<%= f.label :content %>:
+<%= f.text_field :content %><br>
+
+<%= f.submit "Comment" %>
+<% end %>
