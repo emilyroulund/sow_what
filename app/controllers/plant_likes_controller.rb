@@ -3,14 +3,14 @@ class PlantLikesController < ApplicationController
 
   def create
     @current_user = User.find_by(id: session[:user_id])
-    @plant.plant_likes.create(user_id: @current_user.id)
+    @plantlike = @plant.plant_likes.create(user_id: @current_user.id)
     redirect_to plant_path(@plant)
   end
 
   private
 
   def find_plant
-    @plantlike = Plant.find_by(id: params[:plant_id])
+    @plant = Plant.find_by(id: params[:plant_id])
   end
 
 end

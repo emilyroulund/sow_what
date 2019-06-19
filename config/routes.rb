@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: :create
-  resources :plants, only: [:show, :index]
-  get '/', to: 'sessions#new'
-
-  resources :plants do
+  resources :plants, only: [:show, :index] do
     resources :plant_likes
   end
+  get '/', to: 'sessions#new'
+
+
 
 end
