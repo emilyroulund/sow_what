@@ -1,6 +1,6 @@
 <h1>List of Plants</h1>
 
-<p><%= link_to "Create Plant", new_user_plant_path(:user_id) %></p>
+<p><%= link_to "Create Plant", new_user_plant_path(session[:user_id]) %></p>
 
 <h3>Search by Plant</h3>
 <%=@apology%> 
