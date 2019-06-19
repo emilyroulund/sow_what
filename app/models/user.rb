@@ -12,6 +12,6 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   def most_recent_comments
-    
+    self.comments.order(created_at: :desc).limit(5)
   end
 end
