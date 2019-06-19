@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, except: :destroy do
     resources :plants, except: [:index, :show] do
-      resources :comments, only: :create
     end
   end
 
+  resources :comments, only: :create
   resources :plants, only: [:show, :index]
 
 end
