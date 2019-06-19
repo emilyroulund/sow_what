@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    redirect_to plant_path(@comment)
+    @plant = Plant.find_by(id: params[:comment][:plant_id])
+    redirect_to plant_path(@plant)
   end
 
   private
