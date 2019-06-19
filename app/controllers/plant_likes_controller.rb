@@ -5,10 +5,8 @@ class PlantLikesController < ApplicationController
       @current_user = User.find_by(id: session[:user_id])
 
     if already_liked?
-      @this_is_liked = true
       flash[:notice] = "You already liked this plant."
     else
-      @this_is_liked = false
       @plantlike = @plant.plant_likes.create(user_id: @current_user.id)
     end
     redirect_to plant_path(@plant)
