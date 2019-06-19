@@ -1,7 +1,23 @@
 <h1><%= @plant.name %></h1>
 <img src="<%= @plant.img_url %>" height="350" width="490"><br>
-<%= button_to 'Like', plant_plant_likes_path(@plant), method: "post" %>
-<%= button_to 'Unlike', plant_plant_like_path(@plant), method: "delete" %>
+<% if logged_in? %>
+<% pre_like = @plant.plant_likes.find{ |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+ <%= button_to 'Unlike', plant_plant_like_path(@plant), method: "delete" %>
+<% else %>
+ <%= button_to 'Like', plant_plant_likes_path(@plant), method: "post" %>
+<% end %>
+
+<% pre_favorite = @plant.favorites.find{ |fav| fav.user_id == current_user.id} %>
+<% if pre_favorite %>
+ <%= button_to 'Unfavorite', plant_favorite_path(@plant), method: "delete" %>
+<% else %>
+ <%= button_to 'Favorite', plant_favorites_path(@plant), method: "post" %>
+<% end %>
+
+<% end %>
+
+
 <%= @plant.plant_likes.count %> likes
 <hr>
 
