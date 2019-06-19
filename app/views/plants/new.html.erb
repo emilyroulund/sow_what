@@ -7,9 +7,9 @@
 <%end%>
 
 <h2>Create your plant</h2>
-<%= form_for(@plant) do |f| %>
-
-<%= f.label :name %>:
+<%= form_for(@plant, url: user_plants_path) do |f| %>
+<%= f.hidden_field :user_id, :value => @current_user.id%>
+  <%= f.label :name %>:
 <%= f.text_field :name %><br>
 
 <%= f.label :sunlight %>:

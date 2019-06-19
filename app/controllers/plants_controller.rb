@@ -23,6 +23,7 @@ class PlantsController < ApplicationController
 
   def new
     @plant = Plant.new
+    @current_user = User.find_by(id: session[:user_id])
   end
 
   def create

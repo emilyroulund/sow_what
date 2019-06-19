@@ -11,4 +11,7 @@ class User < ApplicationRecord
   validates :name, :username, presence: true
   validates :username, uniqueness: true
 
+  def most_recent_comments
+    
+  end
 end
