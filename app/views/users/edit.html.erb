@@ -1,4 +1,4 @@
-<h1>Create a new user account</h1>
+<h1>Edit your existing account, <%= @user.name %>!</h1>
 <% if @errors %>
     <ul>
     <%@errors.each do |error|%>
@@ -12,9 +12,9 @@
     <p><%= f.text_field :name %></p>
     <p><%= f.label :username %></p>
     <p><%= f.text_field :username %></p>
-    <p><%= f.label :password %></p>
+    <p><%= f.label "Update your password (not required)" %></p>
     <p><%= f.password_field :password %></p>
-    <p><%= f.label :password_confirmation %></p>
+    <p><%= f.label "Confirm your updated password (required)" %></p>
     <p><%= f.password_field :password_confirmation %></p>
-    <p><%= f.submit "Create User"%>
+    <p><%= f.submit "Update User"%>
 <% end %>
