@@ -9,7 +9,7 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = Plant.find(params[:id])
+    @plant = Plant.find_by(id: params[:id])
     @users = User.all
     @current_user = User.find_by(id: session[:user_id])
     @hidden_plant = Plant.find_by(id: params[:id])
