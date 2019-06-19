@@ -3,7 +3,7 @@
 <p><%= link_to "Create Plant", new_user_plant_path(:user_id) %></p>
 
 <h3>Search by Plant</h3>
-<%=@apology%> 
+<%=@apology%>
 <%= form_tag(plants_path, method: "get") do %>
   <%= text_field_tag(:search, params[:search]) %>
   <%= submit_tag 'Search' %>
@@ -12,11 +12,12 @@
 
 
 <h2>Top 5 Most Liked Plants</h2>
+<%=@top_5_plants%>
 <p>once likes are in place, sort by likes and only list top 5</p>
 
 <% @plants.each do |plant| %>
 <%= image_tag plant.img_url, alt: plant.name, size:'200' %><br>
-<%= link_to "#{plant.name}", plant_path(plant)%><br>
+<%= link_to "#{plant.name.upcase}", plant_path(plant)%><br>
 <%= link_to "Created by #{plant.user.name}", user_path(plant.user.name) %><br><hr>
 
 <%end%>
