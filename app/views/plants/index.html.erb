@@ -1,9 +1,9 @@
-<h1>List of Plants</h1>
+<h1>Plants</h1>
 
 <p><%= link_to "Create Plant", new_user_plant_path(session[:user_id]) %></p>
 
 <h3>Search by Plant</h3>
-<%=@apology%> 
+<%=@apology%>
 <%= form_tag(plants_path, method: "get") do %>
   <%= text_field_tag(:search, params[:search]) %>
   <%= submit_tag 'Search' %>
@@ -12,11 +12,18 @@
 
 
 <h2>Top 5 Most Liked Plants</h2>
-<p>once likes are in place, sort by likes and only list top 5</p>
+<%@ordered_plants.each do |plant|%>
+  <%=plant.name.capitalize%><br>
+  <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
+  <%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
+<%end%>
 
+
+
+<h2>All the Plants</h2>
 <% @plants.each do |plant| %>
 <%= image_tag plant.img_url, alt: plant.name, size:'200' %><br>
-<%= link_to "#{plant.name}", plant_path(plant)%><br>
-<%= link_to "Created by #{plant.user.name}", user_path(plant.user.name) %><br><hr>
+<%= link_to "#{plant.name.upcase}", plant_path(plant)%><br>
+<%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br><hr>
 
 <%end%>

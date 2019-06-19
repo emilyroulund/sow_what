@@ -10,6 +10,7 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
+    @ordered_plants = @plants.order(plant_likes: :desc)[0..4]
   end
 
   def show
