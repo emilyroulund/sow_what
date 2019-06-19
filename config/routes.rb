@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   resources :comments, only: :create
   resources :plants, only: [:show, :index]
+  get '/', to: 'sessions#new'
+
+  resources :plants do
+    resources :plant_likes
+  end
 
 end

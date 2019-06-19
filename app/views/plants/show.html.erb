@@ -1,5 +1,6 @@
 <h1><%= @plant.name %></h1>
-<img src="<%= @plant.img_url %>" height="350" width="490">
+<img src="<%= @plant.img_url %>" height="350" width="490"><br>
+<%= button_to 'Like', plant_likes_path(@plantlike), method: :post %>
 <h3>Sunlight: <%= @plant.sunlight %></h3>
 <h3>Water: <%= @plant.water %></h3>
 <h3>Soil: <%= @plant.soil %></h3>
@@ -19,6 +20,7 @@
 <% if !@plant.comments %>
 <hr>
 <% end %>
+<% if logged_in? %>
 <h2>Create Comment</h2>
 <%= form_for(@comment) do |f| %>
 <%= f.hidden_field :plant_id, :value => @hidden_plant.id %>
@@ -31,4 +33,5 @@
 <%= f.text_field :content %><br>
 
 <%= f.submit "Comment" %>
+<% end %>
 <% end %>
