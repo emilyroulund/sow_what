@@ -1,6 +1,8 @@
-<h1>List of Plants</h1>
+<h1>Plants</h1>
 
+<% if logged_in? %>
 <p><%= link_to "Create Plant", new_user_plant_path(session[:user_id]) %></p>
+<% end%>
 
 <h3>Search by Plant</h3>
 <%=@apology%>
@@ -15,14 +17,15 @@
 <%@ordered_plants.each do |plant|%>
   <%=plant.name.capitalize%><br>
   <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
-  <%= link_to "Created by #{plant.user.name}", user_path(plant.user.name) %><br>
+  <%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
 <%end%>
 
-<p>once likes are in place, sort by likes and only list top 5</p>
 
+
+<h2>All the Plants</h2>
 <% @plants.each do |plant| %>
 <%= image_tag plant.img_url, alt: plant.name, size:'200' %><br>
 <%= link_to "#{plant.name.upcase}", plant_path(plant)%><br>
-<%= link_to "Created by #{plant.user.name}", user_path(plant.user.name) %><br><hr>
+<%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br><hr>
 
 <%end%>
