@@ -12,5 +12,8 @@ class Plant < ApplicationRecord
   validates :temperature, presence: true
   validates :description, length: { maximum: 300 }
 
+  def self.search(search)
+    plant = Plant.where(name: search)
+  end
 
 end

@@ -1,10 +1,14 @@
 class PlantsController < ApplicationController
 
   def index
-    @plants = Plant.all
     @users = User.all
-    @user = @plants.each do |plant|
-      plant.user.name
+    if params[:search]
+      @plants = Plant.search(params[:search])
+      if !Plant.find_by(name: params[:search])
+        @apology = "Sorry, this plant does not yet exist"
+      end
+    else
+      @plants = Plant.all
     end
   end
 
@@ -51,6 +55,6 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :soil, :pot_size, :temperature, :climate, :sunlight, :description, :humidity, :water, :img_url, :user_id)
+    params.require(:plant).permit(:name, :soil, :pot_size, :temperature, :climate, :sunlight, :description, :humidity, :water, :img_url, :user_id, :search)
   end
 end
