@@ -1,4 +1,6 @@
 <h1><%= @plant.name %></h1>
+<h2><em>Created by: <%= @plant.user.username %> </em></h2>
+
 <img src="<%= @plant.img_url %>" height="350" width="490"><br>
 <% if logged_in? %>
 <% pre_like = @plant.plant_likes.find{ |like| like.user_id == current_user.id} %>
@@ -28,12 +30,15 @@
 <h3>Temperature: <%= @plant.temperature %></h3>
 <h3>Climate: <%= @plant.climate %></h3>
 <h3>Pot Size: <%= @plant.pot_size %></h3>
-<h3>Description: <%= @plant.description %></h3><hr>
+<h3>Description: <%= @plant.description %></h3>
+<hr>
 <h3>Comments:</h3>
 <div>
   <% @plant.comments.each do |comment| %>
+  <p><em>Posted By: <%= comment.user.username %></em></p>
   <p>Title: <%= comment.title %></p>
-  <p>Content: <%= comment.content %></p><hr>
+  <p>Content: <%= comment.content %></p>
+  <hr>
   <% end %>
 </div>
 
