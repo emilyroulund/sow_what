@@ -21,6 +21,21 @@ class UsersController < ApplicationController
         end
     end
 
+    def edit
+        @user = User.find_by(id: params[:id])
+    end
+
+    def update
+        @user = User.find_by(id: params[:id])
+        @user.assign_attributes(user_params)
+        if @user.save
+            redirect_to user_path(@user)
+        else
+            @errors = @user.errors.full_messages
+            render :edit
+        end
+    end
+
     private
 
     def authorized 
