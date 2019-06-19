@@ -1,7 +1,10 @@
 <h1><%= @plant.name %></h1>
 <img src="<%= @plant.img_url %>" height="350" width="490"><br>
 <%= button_to 'Like', plant_plant_likes_path(@plant), method: "post" %>
-<%= @plant.plant_likes.count %>
+<%= button_to 'Unlike', plant_plant_like_path(@plant), method: "delete" %>
+<%= @plant.plant_likes.count %> likes
+<hr>
+
 <h3>Sunlight: <%= @plant.sunlight %></h3>
 <h3>Water: <%= @plant.water %></h3>
 <h3>Soil: <%= @plant.soil %></h3>
