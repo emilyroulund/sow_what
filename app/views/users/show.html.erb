@@ -3,6 +3,8 @@
     <em>Logged in as: <%=@current_user.username%></em>
 <% end %>
 <hr>
+
+<% if can_i_edit? %>
 <h2>Hello, <%= @user.name %>!</h2>
 
 <h4>Profile Details:</h4>
@@ -13,7 +15,8 @@
         <li>Location: <%= @user.location%></li>
     <% end %>
     </ul>
-
+<%= link_to "Edit my page", edit_user_path%>
+<% end %>
 
 <h3>Plants I've Created</h3>
     <ul>
@@ -30,7 +33,11 @@
     </ul>
 
 <h3>My Activity Log</h3>
-
+<ol>
+        <% @user.most_recent_comments.each do |comment| %>
+            <li>Commented : <%= link_to(comment.title, plant_path(comment.plant))%> on <%=comment.plant.name%></li>
+        <%end%>
+</ol>
 
 <% if logged_in? %>
 <%= button_to "Logout", "/sessions/destroy", method: :delete%>
