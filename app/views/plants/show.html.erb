@@ -7,13 +7,18 @@
 <h3>Temperature: <%= @plant.temperature %></h3>
 <h3>Climate: <%= @plant.climate %></h3>
 <h3>Pot Size: <%= @plant.pot_size %></h3>
-<h3>Description: <%= @plant.description %></h3>
+<h3>Description: <%= @plant.description %></h3><hr>
 <h3>Comments:</h3>
 <div>
-  <h4>Comment Title:</h4>
+  <% @plant.comments.each do |comment| %>
+  <p>Title: <%= comment.title %></p>
+  <p>Content: <%= comment.content %></p><hr>
+  <% end %>
 </div>
 
+<% if !@plant.comments %>
 <hr>
+<% end %>
 <h2>Create Comment</h2>
 <%= form_for(@comment) do |f| %>
 <%= f.hidden_field :plant_id, :value => @hidden_plant.id %>
