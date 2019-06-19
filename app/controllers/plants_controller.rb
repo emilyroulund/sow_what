@@ -10,7 +10,8 @@ class PlantsController < ApplicationController
     else
       @plants = Plant.all
     end
-    @ordered_plants = @plants.order(plant_likes: :desc)[0..4]
+    # @ordered_plants = @plants.plant_likes.sort_by(plant_likes.count :desc).limit(5)
+     @ordered_plants = Plant.featured_plants.reverse[0..4]
   end
 
   def show

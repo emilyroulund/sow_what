@@ -16,9 +16,10 @@ class Plant < ApplicationRecord
     plant = Plant.where(name: search)
   end
 
-  def featured_plants
-    @plants = Plant.all
-    @ordered_plants = @plants.order(plant_likes: :desc)[0..4]
+  def self.featured_plants
+    self.all.sort_by do |plant|
+      plant.plant_likes.count
+    end
   end
 
   # def self.top_5_plants
