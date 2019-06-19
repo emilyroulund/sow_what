@@ -12,7 +12,12 @@
 
 
 <h2>Top 5 Most Liked Plants</h2>
-<%=@top_5_plants%>
+<%@ordered_plants.each do |plant|%>
+  <%=plant.name.capitalize%><br>
+  <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
+  <%= link_to "Created by #{plant.user.name}", user_path(plant.user.name) %><br>
+<%end%>
+
 <p>once likes are in place, sort by likes and only list top 5</p>
 
 <% @plants.each do |plant| %>
