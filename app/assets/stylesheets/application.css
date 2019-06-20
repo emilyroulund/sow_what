@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css?family=Roboto%7CSorts+Mill+Goudy&display=swap');
+
+ /* font-family: 'Sorts Mill Goudy', serif;
+ font-family: 'Roboto', sans-serif; */
+
+ body {
+   margin: 0;
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   z-index: 0;
+   background-color: #f5fdc6;
+   font-family: 'Roboto', sans-serif;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   font-family: 'Sorts Mill Goudy', serif;
+ }
+
+ main {
+   width: 90%;
+   min-height: 100vh;
+   margin: 6em auto 2em;
+   box-sizing: border-box;
+ }
+
+ input {
+   font-size: 1.2em;
+ }
+
+ .login-page {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #41521f;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+ margin: 0;
+ background-color: white;
+ position:fixed;
+ top: 0;
+ width:100%;
+ border-bottom:black solid .1em;
+ min-height: 4.5em;
+ z-index: 1;
+}
+ul.nav {
+ margin: 0;
+ list-style-type: none;
+ display: flex;
+ flex-direction: row;
+ /justify-content: space-around;/
+ flex-wrap: wrap;
+ align-items: flex-end;
+}
+ul.nav li {
+ font-size: 2em;
+ padding: 0.5em;
+}
+.nav a {
+ text-decoration: none;
+ color: black;
+}
+nav img{
+ height: 3.4em;
+ margin: 0;
+}
+ ul.nav li:first-child{
+   margin-left: -1em;
+ }
+nav li:first-child{
+ padding: 0;
+}
+.icon{
+ display:none;
+}
+.nav button{
+ background:none;
+ color:black;
+ border:none;
+ font-size:1em;
+ padding:0;
+}
+.myIMG{
+ border:solid black .1em;
+ border-radius: 360px;
+ display: block;
+ margin: 0 auto;
+}

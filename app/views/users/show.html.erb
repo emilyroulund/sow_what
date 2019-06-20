@@ -19,24 +19,31 @@
 <% end %>
 
 <h3>Plants I've Created</h3>
-    <ul>
-    <% @user.plants.each do |plant| %>
-        <li><%= plant.name %> <%= link_to image_tag(plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %></li>
-    <% end %>
-    </ul>
+  <section class="my-plants">
+      <% @user.plants.each do |plant| %>
+          <div>
+            <%= link_to image_tag(plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %>
+            <p><%= plant.name.titleize %></p>
+          </div>
+      <% end %>
+  </section>
+
 
 <h3>My Favorite Plants</h3>
-    <ul>
-    <% @user.favorite_plants.each do |faveplant| %>
-        <li><%= faveplant.name %><%= link_to image_tag(faveplant.img_url, alt: faveplant.name, size:'200'), plant_path(faveplant)%></li>
-    <% end %>
-    </ul>
+  <section class="my-plants">
+        <% @user.favorite_plants.each do |faveplant| %>
+            <div>
+              <%= link_to image_tag(faveplant.img_url, alt: faveplant.name, size:'200'), plant_path(faveplant)%>
+              <p><%= faveplant.name.titleize %></p>
+            </div>
+        <% end %>
+  </section>
 
 <h3>My Activity Log</h3>
 <ol>
-        <% @user.most_recent_comments.each do |comment| %>
-            <li>Commented : <%= link_to(comment.title, plant_path(comment.plant))%> on <%=comment.plant.name%></li>
-        <%end%>
+      <% @user.most_recent_comments.each do |comment| %>
+        <li>Commented : <%= link_to(comment.title, plant_path(comment.plant))%> on <%=comment.plant.name.titleize%></li>
+      <%end%>
 </ol>
 
 <% if logged_in? %>
