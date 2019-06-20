@@ -7,37 +7,38 @@
 <%end%>
 
 <h2>Create your plant</h2>
+<div class="container">
 <%= form_for(@plant, url: user_plants_path) do |f| %>
 <%= f.hidden_field :user_id, :value => @current_user.id%>
-  <%= f.label :name %>:
-<%= f.text_field :name %><br>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
 
-<%= f.label :sunlight %>:
-<%= f.text_field :sunlight %><br>
+  <%= f.label :sunlight %>
+  <%= f.text_field :sunlight %><br>
 
-<%= f.label :water %>:
-<%= f.text_field :water %><br>
+  <%= f.label :water %>
+  <%= f.text_field :water %><br>
 
-<%= f.label :soil %>:
-<%= f.text_field :soil %><br>
+  <%= f.label :soil %>
+  <%= f.text_field :soil %><br>
 
-<%= f.label :humidity %>:
-<%= f.text_field :humidity %><br>
+  <%= f.label :humidity %>
+  <%= f.text_field :humidity %><br>
 
-<%= f.label :temperature %>
-<%= f.text_field :temperature %><br>
+  <%= f.label :temperature %>
+  <%= f.text_field :temperature %><br>
 
-<%= f.label :climate %>:
-<%= f.text_field :climate %><br>
+  <%= f.label :climate %>
+  <%= f.text_field :climate %><br>
 
-<%= f.label :pot_size %>:
-<%= f.text_field :pot_size %><br>
+  <%= f.label :pot_size %>
+  <%= f.text_field :pot_size %><br>
 
-<%= f.label :description %>:
-<%= f.text_field :description %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description, size:"60x5" %><br>
 
-<%= f.label :img_url %>:
-<%= f.text_field :img_url %><hr>
-
-<%= f.submit "Create" %>
+  <%= f.label :img_url %>
+  <%= f.url_field :img_url %><br>
+  <%= f.submit "Create", class: "submit-button" %>
 <% end %>
+</div>
