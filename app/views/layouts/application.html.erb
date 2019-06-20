@@ -15,19 +15,21 @@
            <ul class="nav" id="myTopNav">
                <li>
                    <a href="/">
-                   <img src="" class="nav-logo" alt="logo">
+                   <%= image_tag("https://cdn130.picsart.com/269915580027211.png?r1024x1024", class:"nav-logo", alt:"logo")%>
                    </a>
                </li>
                <li></li>
-               <li class="active">
-                   <a href="/">Login</a>
-               </li>
                <li>
                    <%= link_to "Plants", plants_path %>
                </li>
-               <li>
-                   <%= link_to "Profile", user_path(session[:user_id]) %>
+               <% if logged_in? %>
+                   <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
+                   <li><%= link_to "Logout", "/sessions/destroy", method: :delete %></li>
+                <% else %>
+                <li>
+                   <a href="/">Login</a>
                </li>
+                <% end %>
 
                <li id="icon" class="icon">
                    <button>&#9776;</button>

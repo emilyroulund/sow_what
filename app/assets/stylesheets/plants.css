@@ -6,10 +6,64 @@
   align-content:flex-end;
 }
 
-div{
+.popular-plant{
   padding: .25em 0em;
   width: 15%;
   margin:.5em;
   border-radius:1em;
   text-align: center;
+}
+
+.each-plant {
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.plant-divide {
+  width: 50%
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.indented {
+  text-indent: 5%;
+}
+
+.show-image{
+  margin: auto;
+  width: 490px;
+  display: block;
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+  padding: 10px;
+  padding-right: 10em;
+  text-align: center;
+  clear: both;
+}
+
+.container label {
+  width: 30%;
+  float: left;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.container input, 
+.container textarea {
+  width: 65%;
+  margin-left: 10px;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.container .submit-button{
+  width: 25%;
+  margin-left: 19em;
+  clear: both;
 }

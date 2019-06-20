@@ -13,10 +13,10 @@
 
 
 
-<h2>Top 5 Most Liked Plants</h2>
+<h3>Top 5 Most Liked Plants</h3>
   <section class="top-5">
     <%@ordered_plants.each do |plant|%>
-      <div>
+      <div class="popular-plant">
       <%=plant.name.titleize%><br>
       <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
       <%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
@@ -27,8 +27,11 @@
 
 <h2>All the Plants</h2>
 <% @plants.each do |plant| %>
+  <div class="each-plant">
+  <%= link_to "#{plant.name.upcase}", plant_path(plant)%><br>
 <%= image_tag plant.img_url, alt: plant.name, size:'200' %><br>
-<%= link_to "#{plant.name.upcase}", plant_path(plant)%><br>
-<%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br><hr>
+<%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
+</div>
+<hr class="plant-divide">
 
 <%end%>

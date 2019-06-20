@@ -21,7 +21,7 @@
 <h3>Plants I've Created</h3>
   <section class="my-plants">
       <% @user.plants.each do |plant| %>
-          <div>
+          <div class="my-plant-each">
             <%= link_to image_tag(plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %>
             <p><%= plant.name.titleize %></p>
           </div>
@@ -32,7 +32,7 @@
 <h3>My Favorite Plants</h3>
   <section class="my-plants">
         <% @user.favorite_plants.each do |faveplant| %>
-            <div>
+            <div class="my-plant-each">
               <%= link_to image_tag(faveplant.img_url, alt: faveplant.name, size:'200'), plant_path(faveplant)%>
               <p><%= faveplant.name.titleize %></p>
             </div>
@@ -45,9 +45,3 @@
         <li>Commented : <%= link_to(comment.title, plant_path(comment.plant))%> on <%=comment.plant.name.titleize%></li>
       <%end%>
 </ol>
-
-<% if logged_in? %>
-<%= button_to "Logout", "/sessions/destroy", method: :delete%>
-<%else %>
-<%= button_to "Login", "/sessions/new", method: :get %>
-<%end%>

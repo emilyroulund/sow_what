@@ -10,7 +10,7 @@ class CreatePlants < ActiveRecord::Migration[5.2]
       t.string :temperature
       t.string :climate
       t.string :pot_size
-      t.string :description
+      t.text :description
       t.string :img_url
 
       t.timestamps

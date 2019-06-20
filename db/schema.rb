@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_183932) do
     t.integer "user_id"
     t.integer "plant_id"
     t.string "title"
-    t.string "content"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["plant_id"], name: "index_comments_on_plant_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_06_18_183932) do
     t.string "temperature"
     t.string "climate"
     t.string "pot_size"
-    t.string "description"
+    t.text "description"
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
