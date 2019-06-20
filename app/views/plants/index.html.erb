@@ -14,12 +14,15 @@
 
 
 <h2>Top 5 Most Liked Plants</h2>
-<%@ordered_plants.each do |plant|%>
-  <%=plant.name.capitalize%><br>
-  <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
-  <%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
-<%end%>
-
+  <section class="top-5">
+    <%@ordered_plants.each do |plant|%>
+      <div>
+      <%=plant.name.titleize%><br>
+      <%= link_to (image_tag plant.img_url, alt: plant.name, size:'200'), plant_path(plant) %><br>
+      <%= link_to "Created by #{plant.user.name}", user_path(plant.user_id) %><br>
+      </div>
+    <%end%>
+  </section><hr>
 
 
 <h2>All the Plants</h2>

@@ -1,0 +1,15 @@
+.my-plants{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-content:flex-end;
+}
+
+div{
+  padding: .25em 0em;
+  width: 15%;
+  margin:.5em;
+  border-radius:1em;
+  text-align: center;
+}

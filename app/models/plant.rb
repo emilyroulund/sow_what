@@ -22,18 +22,4 @@ class Plant < ApplicationRecord
     end
   end
 
-  # def self.top_5_plants
-  #    plants = self.plant_likes.group_by do |like|
-  #      like.plant
-  #    end
-  #
-  #     sorted = plant.sort_by do |plant, likes|
-  #      likes.count
-  #    end.reverse
-  #
-  #     sorted.map do |plant|
-  #      plant[0]
-  #    end[0..4]
-  # end
-
 end

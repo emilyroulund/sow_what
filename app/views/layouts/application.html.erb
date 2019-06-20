@@ -10,6 +10,33 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+       <nav>
+           <ul class="nav" id="myTopNav">
+               <li>
+                   <a href="/">
+                   <img src="" class="nav-logo" alt="logo">
+                   </a>
+               </li>
+               <li></li>
+               <li class="active">
+                   <a href="/">Login</a>
+               </li>
+               <li>
+                   <%= link_to "Plants", plants_path %>
+               </li>
+               <li>
+                   <%= link_to "Profile", user_path(session[:user_id]) %>
+               </li>
+
+               <li id="icon" class="icon">
+                   <button>&#9776;</button>
+               </li>
+           </ul>
+       </nav>
+   </header>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
