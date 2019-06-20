@@ -20,7 +20,7 @@
 <% end %>
 
 
-<%= @plant.plant_likes.count %> likes
+<p><%= @plant.plant_likes.count %> likes</p>
 <hr>
 
 <h3>Sunlight: <%= @plant.sunlight %></h3>
@@ -36,8 +36,19 @@
 <div>
   <% @plant.comments.each do |comment| %>
   <p><em>Posted By: <%= comment.user.username %></em></p>
+  <p><em>Posted on: <%= comment.time%></em></p>
   <p>Title: <%= comment.title %></p>
   <p>Content: <%= comment.content %></p>
+  <p><%= comment.comment_upvotes.count %> votes</p>
+  <% if logged_in? %>
+  <% pre_upvoted = comment.comment_upvotes.find{ |upvote| upvote.user_id == current_user.id} %>
+  <% if pre_upvoted %>
+   <%= button_to 'Downvote', comment_comment_upvote_path(comment), method: "delete" %>
+  <% else %>
+   <%= button_to 'Upvote', comment_comment_upvotes_path(comment), method: "post" %>
+
+  <% end %>
+  <%end%>
   <hr>
   <% end %>
 </div>
